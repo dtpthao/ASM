@@ -52,11 +52,6 @@ i6 = T3;
 i7 = e;
 
 
-
-
-
-///////////
-
 lcntr = 9, do Rounds until lce;
 
     lcntr = 16, do SubBytes until lce;
@@ -103,81 +98,7 @@ lcntr = 9, do Rounds until lce;
 Rounds: r0 = dm(i7,-4);
 
 
-
-
-
-
-//r0 = lshift r0 by 11;
-//r0 = r0 or lshift r1 by 7;
-//r0 = r0 or lshift r2 by 3;
-//r0 = r0 or r3;
-
-
-
-
 .ENDSEG;
-
-
-/////////////////variant1
-//Shiftrows
-//r4 = 4;
-//r5 = 1;
-//r6 = 0;
-//r7 = 1;
-//lcntr = 3, do ShiftRows until lce;
-//	m0 = r5; r0 = dm(m0, i0); 
-//	r5 = r5 + r4; m1 = r5; r1 = dm(m1, i0);
-//	r5 = r5 + r4; m2 = r5; r2 = dm(m2, i0); 
-//	r5 = r5 + r4; m3 = r5; r3 = dm(m3, i0);
-//	dm(m0,i0) = r1;
-//	dm(m1,i0) = r2;
-//	dm(m2,i0) = r3;
-//	dm(m3,i0) = r0;
-//	r6 = r6 + r7;
-//ShiftRows: r5 = r6 + r7;
-
-/*
-/////////////MixColumn
-// u_char mulMas[16] = {
-// 0x02, 0x03, 0x01, 0x01,
-// 0x01, 0x02, 0x03, 0x01,
-// 0x01, 0x01, 0x02, 0x03,
-// 0x03, 0x01, 0x01, 0x02
-// }
-
-r4 = 0x11B;
-r7 = 0;
-r8 = 1;
-lcntr = 4, do MixColumn until lce;
-    m0 = r7; 
-    r7 = r7 + r8; m1 = r7;
-    r7 = r7 + r8; m2 = r7;
-    r7 = r7 + r8; m3 = r7;
-
-    r0 = dm(m0,i0); r1 = dm(m1,i0); r2 = dm(m2,i0); r3 = dm(m3,i0);
-    r5 = LSHIFT r0 by 0x1; 
-    r6 = lshift r1 by 0x1; r6 = r6 XOR r1;
-    r5 = r5 XOR r6; r5 = r5 XOR r2; r5 = r5 XOR r3; r5 = r5 XOR r4;
-    dm(m0,i0) = r5;
-
-    r5 = lshift r1 by 0x1;
-    r6 = lshift r2 by 0x1; r6 = r6 XOR r2;
-    r5 = r5 xor r0; r5 = r5 xor r6; r5 = r5 xor r3; r5 = r5 xor r4;
-    dm(m1,i0) = r5;
-
-    r5 = lshift r2 by 0x1;
-    r6 = lshift r3 by 0x1; r6 = r6 XOR r3;
-    r5 = r5 xor r0; r5 = r5 xor r2; r5 = r5 xor r6; r5 = r5 xor r4;
-    dm(m2,i0) = r5;
-
-    r5 = lshift r0 by 0x1; r5 = r0 xor r5;
-    r6 = lshift r3 by 0x1;
-    r5 = r5 xor r1; r5 = r5 xor r2; r5 = r5 xor r6; r5 = r5 xor r4;
-    dm(m3,i0) = r5;
-MixColumn: r7 = r7 + r8;
-
-*/
-
 
 
 

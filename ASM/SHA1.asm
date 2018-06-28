@@ -1,9 +1,5 @@
 .SEGMENT/PM seg_rth;
-nop;
-nop;
-nop;
-nop;
-nop;
+nop; nop; nop; nop; nop;
 jump start;
 .ENDSEG;
 
@@ -106,7 +102,6 @@ dm(i4,1) = r4;
 
 //--------------SubFunction------------------
 
-/////////////////
 F0to19:	
 r6 = r1 and r2;		//b ^ c
 r7 = not r1;		//~b
@@ -114,13 +109,11 @@ r8 = r7 and r3;		//(~b) ^ d
 r6 = r6 or r8;		//(b ^ c) v ((~b) ^ d)
 rts;
 
-///////////////
 F20to39and60to79:
 r6 = r1 xor r2;    	// b xor c xor d
 r6 = r6 xor r3;
 rts;
 
-//////////////
 F40to59:		
 r6 = r1 and r2;		// b and c
 r7 = r1 and r3; 	// b and d
@@ -129,7 +122,6 @@ r6 = r6 or r7;
 r6 = r6 or r8;
 rts;
 
-///////////////
 TEMP:
   r9 = 5;
   r8 = dm(i3,1);	// get Wt
@@ -140,7 +132,6 @@ TEMP:
   r5 = r5 + r8;		// + Wt
 rts;
 
-///////////////
 Swap:
   r6 = 0; r7 = 30;
   r4 = r3 + r6;

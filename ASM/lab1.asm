@@ -19,14 +19,12 @@ jump start;
 .SEGMENT/PM seg_pmco;
 
 start:
-//programa
 i0 = X;
 i1 = Y;
 i2 = Z;
 
 
 lcntr = 4, do met until lce;
-//ci = 0;
 r0 = dm(i0, 1);
 r1 = dm(i1, 1);
 r2 = r0 + r1 + ci;
